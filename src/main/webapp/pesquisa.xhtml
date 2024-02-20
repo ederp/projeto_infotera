@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+    <h:form>
+        <p:inputText value="#{pessoaBean.pesquisaNome}" placeholder="Nome"/>
+        <p:commandButton value="Pesquisar" action="#{pessoaBean.pesquisar}" update="tabelaPessoas"/>
+    </h:form>
+
+    <p:dataTable id="tabelaPessoas" value="#{pessoaBean.carregarPessoas}" var="pessoa">
+        <!-- Colunas da tabela -->
+        <p:column headerText="Nome">
+            <h:outputText value="#{pessoa.nome}"/>
+        </p:column>
+        
+        <!-- Outras colunas aqui -->
+
+        <p:column headerText="Ações">
+            <p:commandLink action="#{pessoaBean.removerPessoa}" update="tabelaPessoas" title="Remover">
+                <i class="pi pi-trash"/>
+            </p:commandLink>
+            <p:commandLink action="#{pessoaBean.editarPessoa}" title="Editar">
+                <i class="pi pi-pencil"/>
+            </p:commandLink>
+        </p:column>
+    </p:dataTable>
+</h:body>
+</html>

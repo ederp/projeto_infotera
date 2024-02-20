@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+    <h:form>
+        <!-- Campos para exibir dados da pessoa -->
+        <h:outputText value="Nome: #{visualizacaoBean.pessoaSelecionada.nome}"/>
+        <h:outputText value="Email: #{visualizacaoBean.pessoaSelecionada.email}"/>
+        <h:outputText value="Telefone: #{visualizacaoBean.pessoaSelecionada.telefone}"/>
+
+        <!-- Tabela para exibir documentos -->
+        <p:dataTable value="#{visualizacaoBean.pessoaSelecionada.documentos}" var="documento">
+            <!-- Campos para exibir dados do documento -->
+            <p:column headerText="Número">
+                <h:outputText value="#{documento.numero}"/>
+            </p:column>
+            <!-- Outras colunas para documento -->
+        </p:dataTable>
+
+        <!-- Tabelas e campos para endereços e contatos -->
+
+        <!-- Botões para voltar ou realizar outras ações -->
+
+    </h:form>
+</h:body>
+</html>

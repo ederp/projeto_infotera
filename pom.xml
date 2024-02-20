@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jboss.tools</groupId>
+  <artifactId>infotera</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name/>
+  <build>
+    <resources>
+      <resource>
+        <directory>${basedir}/src/main/java</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+      <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <source>13</source>
+          <target>13</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+	  <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+	<dependency>
+    	<groupId>org.hibernate.orm</groupId>
+    	<artifactId>hibernate-core</artifactId>
+    	<version>6.4.4.Final</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api -->
+	<dependency>
+    	<groupId>jakarta.annotation</groupId>
+    	<artifactId>jakarta.annotation-api</artifactId>
+    	<version>3.0.0-M1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/jakarta.inject/jakarta.inject-api -->
+	<dependency>
+    	<groupId>jakarta.inject</groupId>
+    	<artifactId>jakarta.inject-api</artifactId>
+    	<version>2.0.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/jakarta.faces/jakarta.faces-api -->
+	<dependency>
+    	<groupId>jakarta.faces</groupId>
+    	<artifactId>jakarta.faces-api</artifactId>
+    	<version>2.3.1</version>
+    	<scope>provided</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
+	<dependency>
+    	<groupId>org.primefaces</groupId>
+    	<artifactId>primefaces</artifactId>
+    	<version>13.0.6</version>
+	</dependency>
+  </dependencies>
+</project>

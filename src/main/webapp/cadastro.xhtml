@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+    <h:form>
+        <!-- Campos para dados da pessoa -->
+        <p:inputText value="#{cadastroBean.novaPessoa.nome}" label="Nome"/>
+        <p:inputText value="#{cadastroBean.novaPessoa.email}" label="Email"/>
+        <p:inputText value="#{cadastroBean.novaPessoa.telefone}" label="Telefone"/>
+
+        <!-- Incluir cadastro de documentos -->
+        <p:dataTable value="#{cadastroBean.novaPessoa.documentos}" var="documento">
+            <!-- Campos para dados do documento -->
+            <p:column headerText="Número">
+                <p:inputText value="#{documento.numero}"/>
+            </p:column>
+            <!-- Outras colunas para documento -->
+
+            <!-- Botão para remover documento -->
+            <p:column>
+                <p:commandButton value="Remover" action="#{cadastroBean.removerDocumento}"/>
+            </p:column>
+        </p:dataTable>
+
+        <!-- Botão para adicionar novo documento -->
+        <p:commandButton value="Adicionar Documento" action="#{cadastroBean.adicionarNovoDocumento}"/>
+
+        <!-- Outros campos e tabelas para endereços e contatos -->
+
+        <!-- Botão para salvar -->
+        <p:commandButton value="Salvar" action="#{cadastroBean.salvarCadastro}"/>
+    </h:form>
+</h:body>
+</html>

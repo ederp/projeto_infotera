@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
+    version="2.3">
+	<navigation-rule>
+    	<from-view-id>/index.xhtml</from-view-id>
+    	<navigation-case>
+        	<from-outcome>/pesquisa</from-outcome>
+        	<to-view-id>/pesquisa.xhtml</to-view-id>
+    	</navigation-case>
+    	<!-- Adicione casos semelhantes para cadastro e visualizacao -->
+    	<navigation-case>
+        	<from-outcome>/cadastro</from-outcome>
+        	<to-view-id>/cadastro.xhtml</to-view-id>
+    	</navigation-case>
+    	<navigation-case>
+        	<from-outcome>/visualizacao</from-outcome>
+        	<to-view-id>/visualizacao.xhtml</to-view-id>
+    	</navigation-case>
+	</navigation-rule>
+</faces-config>
