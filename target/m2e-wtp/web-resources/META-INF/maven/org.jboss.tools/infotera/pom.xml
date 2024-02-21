@@ -13,6 +13,14 @@
           <exclude>**/*.java</exclude>
         </excludes>
       </resource>
+      <resource>
+      	<directory>src/main/webapp/resources</directory>
+        <targetPath>META-INF/resources</targetPath>
+        <filtering>false</filtering>
+        <includes>
+        	<include>**/*.js</include>
+        </includes>
+      </resource>
     </resources>
     <plugins>
       <plugin>

@@ -3,35 +3,46 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+      
+<h:head>
+    <h:outputScript library="js" name="jquery-3.7.1.min.js" />
+    <script src="js/script.js"></script>
+</h:head>
+
 
 <h:body>
     <h:form>
         <!-- Campos para dados da pessoa -->
-        <p:inputText value="#{cadastroBean.novaPessoa.nome}" label="Nome"/>
-        <p:inputText value="#{cadastroBean.novaPessoa.email}" label="Email"/>
-        <p:inputText value="#{cadastroBean.novaPessoa.telefone}" label="Telefone"/>
-
+        <div class="pessoa">
+        	<div class="campo">
+            	<p:outputLabel>Nome </p:outputLabel>
+            	<p:inputText value="#{cadastroBean.novaPessoa.nome}" label="Nome"/>
+        	</div>
+        	<div class="campo">
+            	<p:outputLabel>E-mail </p:outputLabel>
+            	<p:inputText value="#{cadastroBean.novaPessoa.email}" label="Email"/>
+        	</div>
+        	<div class="campo">
+            	<p:outputLabel>Telefone </p:outputLabel>
+            	<p:inputText value="#{cadastroBean.novaPessoa.telefone}" label="Telefone"/>
+        	</div>
+        </div>
         <!-- Incluir cadastro de documentos -->
-        <p:dataTable value="#{cadastroBean.novaPessoa.documentos}" var="documento">
-            <!-- Campos para dados do documento -->
-            <p:column headerText="Número">
-                <p:inputText value="#{documento.numero}"/>
-            </p:column>
-            <!-- Outras colunas para documento -->
-
-            <!-- Botão para remover documento -->
-            <p:column>
-                <p:commandButton value="Remover" action="#{cadastroBean.removerDocumento}"/>
-            </p:column>
-        </p:dataTable>
-
-        <!-- Botão para adicionar novo documento -->
-        <p:commandButton value="Adicionar Documento" action="#{cadastroBean.adicionarNovoDocumento}"/>
-
-        <!-- Outros campos e tabelas para endereços e contatos -->
-
+        <div class="novoDocumento">
+        	<!-- Botão para adicionar novo documento -->
+        	<p:commandButton value="Adicionar Documento" onclick="adicionarNovoDocumento()" />
+        </div>
+  		<div class="novoContato">
+        	<!-- Botão para adicionar novo contato -->
+        	<p:commandButton value="Adicionar Contato" onclick="adicionarNovoContato()"/>
+		</div>
+		<div class="novoEndereco">
+        	<!-- Botão para adicionar novo endereço -->
+        	<p:commandButton value="Adicionar Endereço" onclick="adicionarNovoEndereco()"/>
+		</div>
+        
         <!-- Botão para salvar -->
-        <p:commandButton value="Salvar" action="#{cadastroBean.salvarCadastro}"/>
+        <p:commandButton value="Salvar" action="#{cadastroBean.salvarCadastro(cadastroBean.novaPessoa)}"/>
     </h:form>
 </h:body>
 </html>

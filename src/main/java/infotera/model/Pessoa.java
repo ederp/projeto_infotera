@@ -32,6 +32,11 @@ public class Pessoa {
     @OneToMany(mappedBy = "pessoa")
     private List<Endereco> enderecos = new ArrayList<>();
 
+	public Pessoa() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Pessoa(Long id, String nome, String tipo, String email, String telefone, List<Documento> documentos,
 			List<Contato> contatos, List<Endereco> enderecos) {
 		super();

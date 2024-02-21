@@ -23,6 +23,11 @@ public class Contato {
     @ManyToOne
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
+    
+	public Contato() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public Contato(Long id, String tipoContato, String numeroTelefone, String enderecoEmail, Pessoa pessoa) {
 		super();

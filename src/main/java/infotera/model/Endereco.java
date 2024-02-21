@@ -26,6 +26,11 @@ public class Endereco {
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
 
+	public Endereco() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Endereco(Long id, String rua, String numero, String cidade, String estado, String pais, Pessoa pessoa) {
 		super();
 		this.id = id;

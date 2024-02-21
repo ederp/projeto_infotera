@@ -22,6 +22,11 @@ public class Documento {
     @ManyToOne
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
+    
+	public Documento() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public Documento(Long id, String numero, String tipoDocumento, Pessoa pessoa) {
 		super();
