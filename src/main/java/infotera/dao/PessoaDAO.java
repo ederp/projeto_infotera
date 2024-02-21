@@ -2,9 +2,12 @@ package infotera.dao;
 
 import java.util.List;
 
+import jakarta.inject.Named;
 import jakarta.persistence.Query;
 import infotera.model.Pessoa;
 
+
+@Named
 public class PessoaDAO {
 	
 	private final HibernateUtil hibernateUtil = new HibernateUtil();

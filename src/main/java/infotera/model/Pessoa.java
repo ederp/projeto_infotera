@@ -3,6 +3,7 @@ package infotera.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,9 +19,13 @@ public class Pessoa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+	@Column(name = "nome")
     private String nome;
+	@Column(name = "tipo")
     private String tipo;
+	@Column(name = "email")
     private String email;
+	@Column(name = "telefone")
     private String telefone;
 
     @OneToMany(mappedBy = "pessoa")

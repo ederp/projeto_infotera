@@ -1,5 +1,6 @@
 package infotera.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,10 +17,15 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+	@Column(name = "rua")
     private String rua;
+	@Column(name = "numero")
     private String numero;
+	@Column(name = "cidade")
     private String cidade;
+	@Column(name = "estado")
     private String estado;
+	@Column(name = "pais")
     private String pais;
 
     @ManyToOne

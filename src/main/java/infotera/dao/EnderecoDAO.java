@@ -1,7 +1,9 @@
 package infotera.dao;
 
 import infotera.model.Endereco;
+import jakarta.inject.Named;
 
+@Named
 public class EnderecoDAO {
 
 	private final HibernateUtil hibernateUtil = new HibernateUtil();

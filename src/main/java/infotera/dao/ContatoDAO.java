@@ -1,7 +1,9 @@
 package infotera.dao;
 
 import infotera.model.Contato;
+import jakarta.inject.Named;
 
+@Named
 public class ContatoDAO {
 
 	private final HibernateUtil hibernateUtil = new HibernateUtil();
